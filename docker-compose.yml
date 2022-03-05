@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  erigon.avado.dappnode.eth:
+    build: ./build
+    image: 'erigon.avado.dappnode.eth:0.0.1'
+    restart: always
+    volumes:
+      - 'data:/home/erigon'
+    ports:
+      - '12345:12345'
+      - '12345:12345/UDP'
+volumes:
+  data: {}
