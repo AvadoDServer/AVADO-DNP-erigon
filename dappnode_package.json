@@ -1,22 +1,22 @@
 {
   "name": "erigon.avado.dappnode.eth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Erigon ETH1 archive node",
   "autoupdate": true,
   "type": "service",
   "avatar": "/ipfs/QmbLJ7PkstYCun8poEXmLpRTqr2Wnkb8sfkk22W3QnJseG",
   "author": "sponnet",
+  "upstream": "v2.32.0",
   "image": {
     "volumes": [
       "data:/home/erigon"
     ],
     "ports": [
-      "30303:30303",
-      "30304:30304",
-      "8545"
+      "30303:30303"
     ],
     "environment": [
-      "EXTRA_OPTS=quaak"
+      "NETWORK=goerli",
+      "EXTRA_OPTS="
     ]
   },
   "license": "GLP-3.0"

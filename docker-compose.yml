@@ -1,13 +1,19 @@
 version: '3.4'
 services:
   erigon.avado.dappnode.eth:
-    build: ./build
-    image: 'erigon.avado.dappnode.eth:0.0.1'
+    build:
+      context: ./build
+      args:
+        VERSION: v2.32.0
+    image: 'erigon.avado.dappnode.eth:0.0.2'
     restart: always
     volumes:
       - 'data:/home/erigon'
+    environment:
+      - NETWORK=goerli
+      - EXTRA_OPTS=
     ports:
-      - '12345:12345'
-      - '12345:12345/udp'
+      - '30303:30303'
+      - '30303:30303/udp'
 volumes:
   data: {}
