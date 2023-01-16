@@ -24,7 +24,7 @@ exec erigon \
   --metrics \
   --metrics.addr=0.0.0.0 \
   --metrics.port=6060 \
-  --port=30303 \
+  --port=30309 \
   --pprof \
   --pprof.addr=0.0.0.0 \
   --pprof.port=6061 \

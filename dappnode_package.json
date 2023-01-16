@@ -1,6 +1,6 @@
 {
   "name": "erigon.avado.dappnode.eth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Erigon ETH1 archive node",
   "autoupdate": true,
   "type": "service",
@@ -12,10 +12,10 @@
       "data:/home/erigon"
     ],
     "ports": [
-      "30303:30303"
+      "30309:30309"
     ],
     "environment": [
-      "NETWORK=goerli",
+      "NETWORK=mainnet",
       "EXTRA_OPTS="
     ]
   },

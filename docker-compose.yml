@@ -5,15 +5,15 @@ services:
       context: ./build
       args:
         VERSION: v2.32.0
-    image: 'erigon.avado.dappnode.eth:0.0.2'
+    image: 'erigon.avado.dappnode.eth:0.0.3'
     restart: always
     volumes:
       - 'data:/home/erigon'
     environment:
-      - NETWORK=goerli
+      - NETWORK=mainnet
       - EXTRA_OPTS=
     ports:
-      - '30303:30303'
-      - '30303:30303/udp'
+      - '30309:30309'
+      - '30309:30309/udp'
 volumes:
   data: {}
