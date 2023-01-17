@@ -1,10 +1,12 @@
-FROM alpine:latest
+ARG VERSION
+FROM --platform=linux/amd64 thorax/erigon:${VERSION}
 
-# Add erigon binaries
-COPY --from=thorax/erigon:v2022.02.03 /usr/local/bin/* /usr/local/bin/
+USER root
+RUN apk update && apk add --no-cache \
+    bash \
+    && rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
-# add supervisor + config
-RUN apk add --no-cache supervisor
-COPY supervisord.conf /etc/supervisord/
+COPY start.sh /start.sh
+RUN chmod u+x /start.sh
 
-ENTRYPOINT supervisord -n -c /etc/supervisord/supervisord.conf 
+ENTRYPOINT [ "/start.sh" ]
